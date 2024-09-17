@@ -1,4 +1,4 @@
-import { DECREMENT, INCREMENT, RESET } from './type';
+import { DECREMENT, DECREMENT_5, INCREMENT, INCREMENT_5, RESET } from './type';
 
 const increment = () => {
   return {
@@ -10,9 +10,20 @@ const decrement = () => {
     type: DECREMENT,
   };
 };
+const increment5 = () => {
+  return {
+    type: INCREMENT_5,
+  };
+};
+const decrement5 = () => {
+  return {
+    type: DECREMENT_5,
+  };
+};
+
 const reset = () => {
   return {
     type: RESET,
   };
 };
-export { increment, decrement, reset };
+export { increment, decrement, reset , increment5 , decrement5};
