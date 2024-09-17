@@ -1,4 +1,11 @@
-import { DECREMENT, DECREMENT_5, INCREMENT, INCREMENT_5 } from "./action/type";
+import {
+  DECREMENT,
+  DECREMENT_5,
+  DECREMENT_BY_VALUE,
+  INCREMENT,
+  INCREMENT_5,
+  INCREMENT_BY_VALUE,
+} from './action/type';
 
 const CounterReducer = (state = { count: 0 }, action) => {
   switch (action.type) {
@@ -26,6 +33,16 @@ const CounterReducer = (state = { count: 0 }, action) => {
       return {
         ...state,
         count: 0,
+      };
+    case INCREMENT_BY_VALUE:
+      return {
+        ...state,
+        count: state.count + action.payload,
+      };
+    case DECREMENT_BY_VALUE:
+      return {
+        ...state,
+        count: state.count - action.payload,
       };
 
     default:

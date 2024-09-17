@@ -6,6 +6,8 @@ import {
   reset,
   increment5,
   decrement5,
+  incrementByValue,
+  decrementByValue,
 } from '../redux/reducer/action/counterActions';
 
 const Counter = () => {
@@ -23,6 +25,12 @@ const Counter = () => {
   const handleDecrement = () => {
     dispatch(decrement());
   };
+  const handleIncrementByValue = (value) => {
+    dispatch(incrementByValue(value));
+  }
+  const handleDecrementByValue = (value) => {
+    dispatch(decrementByValue(value));
+  }
   const handleReset = () => {
     dispatch(reset());
   };
@@ -36,7 +44,9 @@ const Counter = () => {
         <button onClick={handleIncrement}>Increment</button>
         <button onClick={handleDecrement}>Decrement</button>
         <button onClick={handleIncrement5}>Increment 5</button>
-        <button onClick={handleDecrement5}>Decrement 5</button>
+        <button onClick={handleDecrement5}>Decrement 5</button> 
+        <button onClick={() => handleIncrementByValue(10)}>Increment by 10</button>
+        <button onClick={() => handleDecrementByValue(10)}>Decrement by 10</button>
         <button onClick={handleReset}>Reset</button>
       </div>
     </div>
